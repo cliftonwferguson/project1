@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Cliff\Desktop\Java\project1\.metadata\.plugins\org.eclipse.jdt.core
+145000414.index

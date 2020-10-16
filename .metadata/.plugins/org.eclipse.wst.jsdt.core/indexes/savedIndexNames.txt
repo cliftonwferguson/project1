@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\Cliff\Desktop\Java\project1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1017022605.index
+269629623.index
+3158645528.index
+122910794.index
+739400381.index
