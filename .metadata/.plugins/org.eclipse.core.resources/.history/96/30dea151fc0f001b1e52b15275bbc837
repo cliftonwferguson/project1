@@ -1,0 +1,14 @@
+package com.revature.config;
+
+import java.sql.Connection;
+
+public class PlainTextConnectionUtil {
+	
+	private final String url = "jdbc:postgresql://postgresql-class.cks98gmxels6.us-west-1.rds.amazonaws.com"
+			+ ":5432/postgres?currentSchema=jdbc_schema";
+	private final String username = "jdbc_worker";
+	private final String password = "wasspord";
+	
+	
+	
+}

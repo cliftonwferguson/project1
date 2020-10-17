@@ -1,0 +1,31 @@
+package com.revature.config;
+
+import java.sql.Connection;
+
+public class PlainTextConnectionUtil {
+
+	private final String url = "jdbc:postgresql://project1.cr3mdvbkdi0b.us-east-2.rds.amazonaws.com"
+			+ ":5432/postgres?";
+	private final String username = "postgres";
+	private final String password = "password";
+
+	private static PlainTextConnectionUtil instance;
+
+	private PlainTextConnectionUtil() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public static PlainTextConnectionUtil getInstance() {
+		if (instance == null) {
+			instance = new PlainTextConnectionUtil();
+		}
+		return instance;
+	}
+
+	// to create a connection to the db
+	public Connection getConnection() throws SQLException {
+		return DriverManager.getConnection(url, username, password);
+	}
+	
+}
