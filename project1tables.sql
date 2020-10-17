@@ -1,13 +1,17 @@
-GRANT ALL ON TABLE public.Activity TO jdbc_worker;
-GRANT ALL ON TABLE public.account TO jdbc_worker;
+GRANT ALL ON TABLE project1.ers_reimbursement TO jdbc_worker;
+GRANT ALL ON TABLE project1.ers_reimbursement_status TO jdbc_worker;
+GRANT ALL ON TABLE roject1.ers_reimbursement_type TO jdbc_worker;
+GRANT ALL ON TABLE project1.ers_user_roles TO jdbc_worker;
+GRANT ALL ON TABLE project1.ers_users TO jdbc_worker;
+
+create table project1.ers_users
+
+drop table project1.ers_reimbursement;
 
 
-drop table public.ers_reimbursement;
+select * from project1.ers_reimbursement;
 
-
-select * from public.ers_reimbursement;
-
-CREATE TABLE public.ers_reimbursement (
+CREATE TABLE project1.ers_reimbursement (
 	reimb_id serial primary key,
 	reimb_amount integer,
 	reimb_submitted timestamp default(now()),
@@ -20,34 +24,34 @@ CREATE TABLE public.ers_reimbursement (
 	reimb_type_id integer references public.ers_reimbursement_type(reimb_type_id)
 );
 
-select * from public.ers_reimbursement_status;
+select * from project1.ers_reimbursement_status;
 
-create table public.ers_reimbursement_status (
+create table project1.ers_reimbursement_status (
     reimb_status_id serial primary key,
     reimb_status text
 )
 
-select * from public.ers_reimbursement_type;
+select * from project1.ers_reimbursement_type;
 
-create table public.ers_reimbursement_type (
+create table project1.ers_reimbursement_type (
     reimb_type_id serial primary key,
     reimb_type text
 );
 
-select * from public.ers_user_roles;
+select * from project1.ers_user_roles;
 
-drop table public.ers_user_roles;
+drop table project1.ers_user_roles;
 
-CREATE TABLE public.ers_user_roles (
+CREATE TABLE project1.ers_user_roles (
 	ers_user_role_id serial primary key,
 	user_role text DEFAULT 'employee'
 );
 
-select * from public.ers_users;
+select * from project1.ers_users;
 
-drop table public.ers_users cascade;
+drop table project1.ers_users cascade;
 
-create table public.ers_users (
+create table project1.ers_users (
   ers_users_id serial primary key,
   ers_username text,
   unique(ers_username),
