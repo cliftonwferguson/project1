@@ -1,0 +1,13 @@
+package com.web.model;
+
+public class ReimbursementStatus {
+
+	/*
+	 * create table project1.ers_reimbursement_status (
+    reimb_status_id serial primary key,
+    reimb_status text)
+	 */
+	
+	private 
+	
+}
