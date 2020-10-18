@@ -1,0 +1,28 @@
+package com.web.model;
+
+public class User {
+   
+	/*
+	 * create table project1.ers_users (
+  ers_users_id serial primary key,
+  ers_username text,
+  unique(ers_username),
+  ers_password text,
+  user_first_name text,
+  user_last_name text,
+  user_email text,
+  unique(user_email),
+  user_role_id integer references public.ers_user_roles(ers_user_role_id)  
+ )
+
+	 */
+	private int usersid;
+	private String username;
+	private String password;
+	private String firstname;
+	private String lastname;
+	private String email;
+	private String userroleid;
+	
+  
+}
