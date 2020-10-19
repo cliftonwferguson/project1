@@ -29,7 +29,6 @@ public class Reimbursement {
 	private int resolver;
 	private int statusid;
 	private int typeid;
-	
 	public int getReimbid() {
 		return reimbid;
 	}

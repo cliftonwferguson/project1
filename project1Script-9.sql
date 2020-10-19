@@ -11,6 +11,8 @@ drop table project1.ers_reimbursement;
 
 select * from project1.ers_reimbursement;
 
+
+
 CREATE TABLE project1.ers_reimbursement (
 	reimb_id serial primary key,
 	reimb_amount integer,
@@ -26,6 +28,8 @@ CREATE TABLE project1.ers_reimbursement (
 
 select * from project1.ers_reimbursement_status;
 
+insert into project1.ers_reimbursement_status(reimb_status) values ('Pending'), ('Approved'), ('Denied');
+
 create table project1.ers_reimbursement_status (
     reimb_status_id serial primary key,
     reimb_status text
@@ -33,14 +37,21 @@ create table project1.ers_reimbursement_status (
 
 select * from project1.ers_reimbursement_type;
 
+insert into project1.ers_reimbursement_type(reimb_type) values ('Advertising Expense'), ('Relocation Expense'), ('Travel'); 
+
 create table project1.ers_reimbursement_type (
     reimb_type_id serial primary key,
     reimb_type text
 );
 
+
 select * from project1.ers_user_roles;
 
 drop table project1.ers_user_roles;
+
+insert into project1.ers_user_roles(user_role) values ('Employee'), ('Admin'), ('Supervisor'); 
+
+DELETE FROM project1.ers_user_roles WHERE user_role='employee';
 
 CREATE TABLE project1.ers_user_roles (
 	ers_user_role_id serial primary key,
