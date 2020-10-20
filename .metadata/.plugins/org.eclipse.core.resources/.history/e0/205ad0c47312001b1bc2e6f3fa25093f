@@ -5,35 +5,33 @@ import java.util.List;
 import com.web.model.User;
 
 public class UserDao implements DaoContract<User, Integer> {
-
-	@Override
-	public List<User> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public User findById(Integer i) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int update(User t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int create(User t) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete(User i) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
    
+	public List<User> findAll() {
+		return null;
+	   
+	}
+	
+	public User findById(Integer i) {
+		return null;
+		
+	}
+	
+	public int update(User t) {
+		return 0;
+		
+	}
+	
+	public int create(User t) {
+		return 0; 
+	}
+	
+	public int delete(Integer i) {
+		return 0;
+		
+	}
+	
+	public User findByName(String name) {
+		return null;
+	
+	}
 }
