@@ -1,0 +1,9 @@
+package com.web.repo;
+
+import com.web.model.User;
+
+public class UserDao implements DaoContract<User, Integer> {
+   
+	
+	
+}
