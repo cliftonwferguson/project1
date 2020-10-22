@@ -3,8 +3,6 @@ package com.web.repo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,7 +15,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
 
 	@Override
 	public List<Reimbursement> findAll() {
-		List<Reimbursement> reimbursement = new LinkedList<>();
+		List<User> users = new LinkedList<>();
 		String sql = "select * from reimbursement_view";
 		try(Connection conn = ConnectionUtil.getInstance().getConnection()){
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -28,16 +26,12 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
                 b.reimb_status, a.reimb_submitted, c.reimb_type 
 				 */
 				
-				reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
-						rs.getString("reimb_status"), rs.getObject("reimb_submitted", LocalDateTime.class),
-							rs.getString("reimb_type")));
+				Reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
+						new ReimbursementStatus(rs.getString("reimb_status"), rs.getOffsetDateTime("reimb_submitted"),
+							new ReimbursementType(rs.getString"reimb_type")	)));
 			}
-			rs.close();
-			ps.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
 			}
-		return reimbursement;
+		return null;
 	}
 
 	@Override

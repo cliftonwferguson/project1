@@ -252,25 +252,14 @@ public int getId() {
 
 	//	 a.reimb_id, a.reimb_author, a.reimb_amount, 
 //     b.reimb_status, a.reimb_submitted, c.reimb_type 
-	public Reimbursement(int int1, String string, int int2, LocalDateTime submitted) {
+	public Reimbursement(int int1, String string, int int2, OffsetDateTime reimbursementStatus) {
 		super();
 		this.id = int1;
 		this.author = string;
 		this.amount = int2;
-		this.submitted = submitted;
+		this.submitted = reimbursementStatus;
 		
 	}
-
-
-
-	public Reimbursement(int int1, String string, int int2, String string2, LocalDateTime object, String string3) {
-		super();
-		this.id = int1;
-		this.author = string;
-		this.amount = int2;
-		this.submitted = object;
-		this.type = string3;
- 	}
 	
 	
 	

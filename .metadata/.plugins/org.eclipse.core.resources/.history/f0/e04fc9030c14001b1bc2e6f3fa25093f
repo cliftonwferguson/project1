@@ -17,7 +17,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
 
 	@Override
 	public List<Reimbursement> findAll() {
-		List<Reimbursement> reimbursement = new LinkedList<>();
+		List<Reimbursement> users = new LinkedList<>();
 		String sql = "select * from reimbursement_view";
 		try(Connection conn = ConnectionUtil.getInstance().getConnection()){
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -28,7 +28,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
                 b.reimb_status, a.reimb_submitted, c.reimb_type 
 				 */
 				
-				reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
+				Reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
 						rs.getString("reimb_status"), rs.getObject("reimb_submitted", LocalDateTime.class),
 							rs.getString("reimb_type")));
 			}
@@ -37,7 +37,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		return reimbursement;
+		return Reimbursement;
 	}
 
 	@Override

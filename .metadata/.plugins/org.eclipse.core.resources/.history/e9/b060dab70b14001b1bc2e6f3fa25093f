@@ -260,17 +260,6 @@ public int getId() {
 		this.submitted = submitted;
 		
 	}
-
-
-
-	public Reimbursement(int int1, String string, int int2, String string2, LocalDateTime object, String string3) {
-		super();
-		this.id = int1;
-		this.author = string;
-		this.amount = int2;
-		this.submitted = object;
-		this.type = string3;
- 	}
 	
 	
 	
