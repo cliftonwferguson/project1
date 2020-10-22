@@ -28,7 +28,7 @@ public class ReimbursementDaoTest {
 	
 	@Test
 	public void findByNameTest() {
-		Reimbursement r = rd.findByName("adam.adams");
+		Reimbursement r = rd.findByName("2");
 		assertNotNull(r);
 		
 	}

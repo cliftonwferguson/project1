@@ -1,7 +1,6 @@
 package com.revature.repo;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -27,9 +26,9 @@ public class ReimbursementDaoTest {
 	}
 	
 	@Test
-	public void findByNameTest() {
-		Reimbursement r = rd.findByName("adam.adams");
-		assertNotNull(r);
+	public void findByNameTest(String name) {
+		Reimbursement r = rd.findByName(name);
+		assertFalse(r == null);
 		
 	}
 

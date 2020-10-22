@@ -14,7 +14,9 @@ create view reimbursement_view as select a.reimb_id, a.reimb_author, a.reimb_amo
     from ers_reimbursement a join ers_reimbursement_status b on a.reimb_id  =  b.reimb_status_id
    join ers_reimbursement_type c on a.reimb_id = c.reimb_type_id;
   
-  select * from reimbursement_view;
+select * from reimbursement_view;
+ 
+ select * from reimbursement_view where reimb_author=?;
 
 create table project1.ers_users
 
