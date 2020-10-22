@@ -31,12 +31,7 @@ public class ReimbursementType {
 		this.reimbType = reimbType;
 	}
 	
-//  a.reimb_id, a.reimb_author, a.reimb_amount, 
-//  b.reimb_status, a.reimb_submitted, c.reimb_type 
 	
-	public ReimbursementType(String reimbType) {
-		this.reimbType = reimbType;
-	}
 	
 	
 	

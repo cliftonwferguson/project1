@@ -37,12 +37,6 @@ public class ReimbursementStatus {
 		this.status = status;
 	}
 	
-//	 a.reimb_id, a.reimb_author, a.reimb_amount, 
-//  b.reimb_status, a.reimb_submitted, c.reimb_type 
-	
-	public ReimbursementStatus(String status) {
-		this.status = status;
-	}
 	
 	
 }
