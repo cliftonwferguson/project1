@@ -19,27 +19,17 @@ public class Reimbursement {
 	reimb_type_id integer references public.ers_reimbursement_type(reimb_type_id)
 	 */
 	
-	private int reimbid;
-	private int amount;
-	private OffsetDateTime submitted;
-	private OffsetDateTime resolved;
-	private String description;
-	private BYTE_ARRAY receipt; 
-	private int author;
-	private int resolver;
-	private int statusid;
-	private int typeid;
-	
-	public int getReimbid() {
-		return reimbid;
+	private int id;
+	public int getId() {
+		return id;
 	}
-	public void setReimbid(int reimbid) {
-		this.reimbid = reimbid;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public OffsetDateTime getSubmitted() {
@@ -66,44 +56,76 @@ public class Reimbursement {
 	public void setReceipt(BYTE_ARRAY receipt) {
 		this.receipt = receipt;
 	}
-	public int getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
-	public void setAuthor(int author) {
+	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public int getResolver() {
+	public String getResolver() {
 		return resolver;
 	}
-	public void setResolver(int resolver) {
+	public void setResolver(String resolver) {
 		this.resolver = resolver;
 	}
-	public int getStatusid() {
-		return statusid;
+	public String getStatus() {
+		return status;
 	}
-	public void setStatusid(int statusid) {
-		this.statusid = statusid;
+	public void setStatus(String status) {
+		this.status = status;
 	}
-	public int getTypeid() {
-		return typeid;
+	public int getAuthor_id() {
+		return author_id;
 	}
-	public void setTypeid(int typeid) {
-		this.typeid = typeid;
+	public void setAuthor_id(int author_id) {
+		this.author_id = author_id;
 	}
+	public int getResolver_id() {
+		return resolver_id;
+	}
+	public void setResolver_id(int resolver_id) {
+		this.resolver_id = resolver_id;
+	}
+	public int getStatus_id() {
+		return status_id;
+	}
+	public void setStatus_id(int status_id) {
+		this.status_id = status_id;
+	}
+	public int getType_id() {
+		return type_id;
+	}
+	public void setType_id(int type_id) {
+		this.type_id = type_id;
+	}
+	private double amount;
+	private OffsetDateTime submitted;
+	private OffsetDateTime resolved;
+	private String description;
+	private BYTE_ARRAY receipt; 
+	
+	//Use to retrieve data
+	private String author;
+	private String resolver;
+	private String status;
+	
+	//Use to create, update, and deletion of data
+	private int author_id;
+	private int resolver_id;
+	private int status_id;
+	private int type_id;
 	@Override
 	public String toString() {
-		return "Reimbursement [reimbid=" + reimbid + ", amount=" + amount + ", submitted=" + submitted + ", resolved="
-				+ resolved + ", description=" + description + ", receipt=" + receipt + ", author=" + author
-				+ ", resolver=" + resolver + ", statusid=" + statusid + ", typeid=" + typeid + "]";
+		return "Reimbursement [id=" + id + ", amount=" + amount + ", submitted=" + submitted + ", resolved=" + resolved
+				+ ", description=" + description + ", receipt=" + receipt + ", author=" + author + ", resolver="
+				+ resolver + ", status=" + status + ", author_id=" + author_id + ", resolver_id=" + resolver_id
+				+ ", status_id=" + status_id + ", type_id=" + type_id + "]";
 	}
-	public Reimbursement() {
+	public Reimbursement(int id, double amount, OffsetDateTime submitted, OffsetDateTime resolved, String description,
+			BYTE_ARRAY receipt, String author, String resolver, String status, int author_id, int resolver_id,
+			int status_id, int type_id) {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Reimbursement(int reimbid, int amount, OffsetDateTime submitted, OffsetDateTime resolved, String description,
-			BYTE_ARRAY receipt, int author, int resolver, int statusid, int typeid) {
-		super();
-		this.reimbid = reimbid;
+		this.id = id;
 		this.amount = amount;
 		this.submitted = submitted;
 		this.resolved = resolved;
@@ -111,8 +133,15 @@ public class Reimbursement {
 		this.receipt = receipt;
 		this.author = author;
 		this.resolver = resolver;
-		this.statusid = statusid;
-		this.typeid = typeid;
+		this.status = status;
+		this.author_id = author_id;
+		this.resolver_id = resolver_id;
+		this.status_id = status_id;
+		this.type_id = type_id;
+	}
+	public Reimbursement() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
