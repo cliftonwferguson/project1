@@ -4,8 +4,6 @@ import java.time.OffsetDateTime;
 
 import javax.print.DocFlavor.BYTE_ARRAY;
 
-import com.web.repo.ReimbursementStatus;
-
 public class Reimbursement {
 
 	/*
@@ -152,16 +150,6 @@ public class Reimbursement {
 	public Reimbursement() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-//	 a.reimb_id, a.reimb_author, a.reimb_amount, 
-//     b.reimb_status, a.reimb_submitted, c.reimb_type 
-	public Reimbursement(int int1, String string, int int2, String reimbursementStatus) {
-		super();
-		this.id = int1;
-		this.author = string;
-		this.amount = int2;
-		this.status = reimbursementStatus;
-		
 	}
 	
 	

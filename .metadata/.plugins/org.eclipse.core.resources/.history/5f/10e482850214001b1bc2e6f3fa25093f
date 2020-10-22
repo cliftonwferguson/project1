@@ -1,0 +1,43 @@
+package com.web.model;
+
+import java.time.OffsetDateTime;
+
+import javax.print.DocFlavor.BYTE_ARRAY;
+
+public class Reimbursement {
+
+	/*
+	 * reimb_id serial primary key,
+	reimb_amount integer,
+	reimb_submitted timestamp default(now()),
+	reimb_resolved  timestamp default(now()),
+	reimb_description text,
+	reimb_receipt bytea,
+	reimb_author integer references public.ers_users(ers_users_id),
+	reimb_resolver integer references public.ers_users(ers_users_id),
+	reimb_status_id integer references public.ers_reimbursement_status(reimb_status_id),
+	reimb_type_id integer references public.ers_reimbursement_type(reimb_type_id)
+	 */
+	
+	private int id;
+	private double amount;
+	private OffsetDateTime submitted;
+	private OffsetDateTime resolved;
+	private String description;
+	private BYTE_ARRAY receipt; 
+	
+	//Use to retrieve data
+	private String author;
+	private String resolver;
+	private String status;
+	private String type;
+	
+	//Use to create, update, and deletion of data
+	private int author_id;
+	private int resolver_id;
+	private int status_id;
+	private int type_id;
+	
+	
+	
+}

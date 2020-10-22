@@ -4,8 +4,6 @@ import java.time.OffsetDateTime;
 
 import javax.print.DocFlavor.BYTE_ARRAY;
 
-import com.web.repo.ReimbursementStatus;
-
 public class Reimbursement {
 
 	/*
@@ -22,23 +20,6 @@ public class Reimbursement {
 	 */
 	
 	private int id;
-	private double amount;
-	private OffsetDateTime submitted;
-	private OffsetDateTime resolved;
-	private String description;
-	private BYTE_ARRAY receipt; 
-	
-	//Use to retrieve data
-	private String author;
-	private String resolver;
-	private String status;
-	private String type;
-	
-	//Use to create, update, and deletion of data
-	private int author_id;
-	private int resolver_id;
-	private int status_id;
-	private int type_id;
 	public int getId() {
 		return id;
 	}
@@ -93,12 +74,6 @@ public class Reimbursement {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
 	public int getAuthor_id() {
 		return author_id;
 	}
@@ -123,16 +98,32 @@ public class Reimbursement {
 	public void setType_id(int type_id) {
 		this.type_id = type_id;
 	}
+	private double amount;
+	private OffsetDateTime submitted;
+	private OffsetDateTime resolved;
+	private String description;
+	private BYTE_ARRAY receipt; 
+	
+	//Use to retrieve data
+	private String author;
+	private String resolver;
+	private String status;
+	
+	//Use to create, update, and deletion of data
+	private int author_id;
+	private int resolver_id;
+	private int status_id;
+	private int type_id;
 	@Override
 	public String toString() {
 		return "Reimbursement [id=" + id + ", amount=" + amount + ", submitted=" + submitted + ", resolved=" + resolved
 				+ ", description=" + description + ", receipt=" + receipt + ", author=" + author + ", resolver="
-				+ resolver + ", status=" + status + ", type=" + type + ", author_id=" + author_id + ", resolver_id="
-				+ resolver_id + ", status_id=" + status_id + ", type_id=" + type_id + "]";
+				+ resolver + ", status=" + status + ", author_id=" + author_id + ", resolver_id=" + resolver_id
+				+ ", status_id=" + status_id + ", type_id=" + type_id + "]";
 	}
 	public Reimbursement(int id, double amount, OffsetDateTime submitted, OffsetDateTime resolved, String description,
-			BYTE_ARRAY receipt, String author, String resolver, String status, String type, int author_id,
-			int resolver_id, int status_id, int type_id) {
+			BYTE_ARRAY receipt, String author, String resolver, String status, int author_id, int resolver_id,
+			int status_id, int type_id) {
 		super();
 		this.id = id;
 		this.amount = amount;
@@ -143,7 +134,6 @@ public class Reimbursement {
 		this.author = author;
 		this.resolver = resolver;
 		this.status = status;
-		this.type = type;
 		this.author_id = author_id;
 		this.resolver_id = resolver_id;
 		this.status_id = status_id;
@@ -153,17 +143,6 @@ public class Reimbursement {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-//	 a.reimb_id, a.reimb_author, a.reimb_amount, 
-//     b.reimb_status, a.reimb_submitted, c.reimb_type 
-	public Reimbursement(int int1, String string, int int2, String reimbursementStatus) {
-		super();
-		this.id = int1;
-		this.author = string;
-		this.amount = int2;
-		this.status = reimbursementStatus;
-		
-	}
-	
 	
 	
 }

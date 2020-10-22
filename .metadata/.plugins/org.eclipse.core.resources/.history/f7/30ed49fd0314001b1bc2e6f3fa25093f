@@ -28,7 +28,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
 				
 				Reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
 						new ReimbursementStatus(rs.getString("reimb_status"), rs.getOffsetDateTime("reimb_submitted"),
-							new ReimbursementType(rs.getString"reimb_type")	)));
+							new ReimbursementType("reimb_type")	)));
 			}
 			}
 		return null;

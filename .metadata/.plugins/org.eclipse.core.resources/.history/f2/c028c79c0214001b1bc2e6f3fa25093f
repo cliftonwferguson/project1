@@ -15,21 +15,21 @@ public class UserDao implements DaoContract<User, Integer> {
 	@Override
 	public List<User> findAll() {
 		List<User> users = new LinkedList<>();
-//		String sql = "select * from reimbursement_view";
-//		try(Connection conn = ConnectionUtil.getInstance().getConnection()){
-//			PreparedStatement ps = conn.prepareStatement(sql);
-//			ResultSet rs = ps.executeQuery();
-//			while(rs.next()) {
-//				/*
-//		            a.reimb_id, a.reimb_author, a.reimb_amount, 
-//                b.reimb_status, a.reimb_submitted, c.reimb_type 
-//				 */
-//				
-//				users.add(new User(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
-//						new ReimbursementStatus(rs.getString("reimb_status"), rs.getOffsetDateTime("reimb_submitted"),
-//							new ReimbursementType("reimb_type")	)));
-//			}
-//		}
+		String sql = "select * from reimbursement_view";
+		try(Connection conn = ConnectionUtil.getInstance().getConnection()){
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				/*
+		            a.reimb_id, a.reimb_author, a.reimb_amount, 
+                b.reimb_status, a.reimb_submitted, c.reimb_type 
+				 */
+				
+				users.add(new User(rs.getInt("reimb_id"), rs.getString("reimb_author"), rs.getInt("reimb_amount"),
+						new ReimbursementStatus(rs.getString("reimb_status"), rs.getOffsetDateTime("reimb_submitted"),
+							new ReimbursementType("reimb_type")	)));
+			}
+		}
 		return null;
 	}
 
