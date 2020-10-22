@@ -13,7 +13,5 @@ public interface DaoContract<T, I> {
 	int create(T t);
 
 	int delete(T i);
-	
-	T findByName(String name);
 
 }

@@ -42,10 +42,4 @@ public class UserDao implements DaoContract<User, Integer> {
 		return 0;
 	}
 
-	@Override
-	public User findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

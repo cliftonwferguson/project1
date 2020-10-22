@@ -64,10 +64,4 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
 		return 0;
 	}
 
-	@Override
-	public Reimbursement findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
