@@ -3,7 +3,6 @@ package com.web.repo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.LinkedList;
 import java.util.List;
 
 import com.revature.config.ConnectionUtil;
@@ -13,18 +12,13 @@ public class UserDao implements DaoContract<User, Integer> {
 
 	@Override
 	public List<User> findAll() {
-		List<User> users = new LinkedList<>();
+		List<User> users = new
 		String sql = "select * from reimbursement_view";
 		try(Connection conn = ConnectionUtil.getInstance().getConnection()){
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				/*
-		            a.reimb_id, a.reimb_author, a.reimb_amount, 
-                b.reimb_status, a.reimb_submitted, c.reimb_type 
-				 */
 				
-				users.add(new User(0, rs.getInt('reimb_author'), )
 			}
 		}
 		return null;
@@ -53,5 +47,5 @@ public class UserDao implements DaoContract<User, Integer> {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+   
 }
