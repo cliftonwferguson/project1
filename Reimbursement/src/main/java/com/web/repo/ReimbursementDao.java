@@ -18,7 +18,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer>{
 	@Override
 	public List<Reimbursement> findAll() {
 		List<Reimbursement> reimbursement = new LinkedList<>();
-		String sql = "select * from reimbursement_view";
+		String sql = "select * from project1.reimbursement_view";
 		try(Connection conn = ConnectionUtil.getInstance().getConnection()){
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
