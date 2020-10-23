@@ -6,6 +6,13 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 public class ConnectionUtil {
+	{
+		try {
+			Class.forName("org.postgresql.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	private final String url = "jdbc:postgresql://bankclifton.cr3mdvbkdi0b.us-east-2.rds.amazonaws.com"
 			+ ":5432/postgres?currentSchema=project1";
