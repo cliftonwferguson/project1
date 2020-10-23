@@ -16,6 +16,9 @@ public class ReimbursementService {
 		super();
 	}
 	
+	public Reimbursement findByName(String name) {
+		return rdao.findByName(name);
+	}
 	
 	
 }
