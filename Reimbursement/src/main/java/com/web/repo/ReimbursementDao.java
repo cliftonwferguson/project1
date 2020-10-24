@@ -90,11 +90,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 
 	
 
-//	@Override
-//	public Reimbursement findByName(String name, String password) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+
 	
 	
 

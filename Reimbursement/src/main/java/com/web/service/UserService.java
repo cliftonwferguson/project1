@@ -15,4 +15,8 @@ public class UserService {
 	 public UserService() {
 		 super();
 	 }
+	 
+	 public User findByName(String name) {
+		 return udao.findByName(name);
+	 }
 }

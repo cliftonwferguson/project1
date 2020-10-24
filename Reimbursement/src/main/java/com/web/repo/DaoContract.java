@@ -16,6 +16,6 @@ public interface DaoContract<T, I> {
 	
 	T findByName(String name);
 	
-	//T findByName(String name, String password);
+	
 
 }
