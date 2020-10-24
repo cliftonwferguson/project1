@@ -30,21 +30,14 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 				 * public.ers_users(ers_users_id), reimb_resolver integer references
 				 * public.ers_users(ers_users_id), reimb_status_id integer references
 				 * public.ers_reimbursement_status(reimb_status_id), reimb_type_id integer
-				 * reimb_resolver integer
-				 * reimb_status_id integer
-				 * reimb_type_id integer
+				 * reimb_resolver integer reimb_status_id integer reimb_type_id integer
 				 */
-   
-				reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), 
-						rs.getDouble("reimb_amount"),
-						rs.getObject("reimb_submitted", LocalDateTime.class), 
-						rs.getObject("reimb_resolved", LocalDateTime.class),
-						rs.getString("reimb_description"), 
-						rs.getBytes("reimb_receipt"),
-						rs.getInt("reimb_author"),
-						rs.getInt("reimb_resolver"),
-						rs.getInt("reimb_status_id"),
-						rs.getInt("reimb_type_id")));
+
+				reimbursement.add(new Reimbursement(rs.getInt("reimb_id"), rs.getDouble("reimb_amount"),
+						rs.getObject("reimb_submitted", LocalDateTime.class),
+						rs.getObject("reimb_resolved", LocalDateTime.class), rs.getString("reimb_description"),
+						rs.getBytes("reimb_receipt"), rs.getInt("reimb_author"), rs.getInt("reimb_resolver"),
+						rs.getInt("reimb_status_id"), rs.getInt("reimb_type_id")));
 			}
 			rs.close();
 			ps.close();
@@ -87,11 +80,5 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	public Reimbursement findByName(String name, String password) {
 		return null;
 	}
-
-	
-
-
-	
-	
 
 }
