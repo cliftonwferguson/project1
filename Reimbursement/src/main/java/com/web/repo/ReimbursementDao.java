@@ -88,11 +88,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 		return null;
 	}
 
-	public static void main(String[] args) {
-		ReimbursementDao r = new ReimbursementDao();
-		r.findByName("adam.adams");
-		System.out.println(r);
-	}
+	
 
 //	@Override
 //	public Reimbursement findByName(String name, String password) {
