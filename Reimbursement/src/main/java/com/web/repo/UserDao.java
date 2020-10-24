@@ -17,7 +17,7 @@ public class UserDao implements DaoContract<User, Integer> {
 
 	@Override
 	public List<User> findAll() {
-		
+
 		return null;
 	}
 
@@ -45,39 +45,35 @@ public class UserDao implements DaoContract<User, Integer> {
 		return 0;
 	}
 
-	
 	public User findByName(String name, String password) {
 		User u = new User();
-	
+
 		String sql = "select * from project1.ers_users where ers_username=? and ers_password=?";
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, name);
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
-			rs.next();
-		
-			
-			u = new User(rs.getInt("ers_users_id"),  
-					rs.getString("ers_username"),
-					rs.getString("ers_password"),
-					rs.getString("user_first_name"),
-					rs.getString("user_last_name"),
-					rs.getString("user_email"),
-					rs.getInt("user_role_id"));
-         
-	} catch (SQLException e) {
-	   e.printStackTrace();	
-	}
+			if (rs.next()) {
+
+				u = new User(rs.getInt("ers_users_id"), rs.getString("ers_username"), rs.getString("ers_password"),
+						rs.getString("user_first_name"), rs.getString("user_last_name"), rs.getString("user_email"),
+						rs.getInt("user_role_id"));
+
+			} else {
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(u);
 		return u;
 	}
 
 	public static void main(String[] args) {
 		UserDao ud = new UserDao();
-		System.out.println(ud.findByName("John.smith", "asd"));
-		
+		System.out.println(ud.findByName("", ""));
+
 	}
 
-	
-	
 }
