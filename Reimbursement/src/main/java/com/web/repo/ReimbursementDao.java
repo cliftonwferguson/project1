@@ -84,7 +84,7 @@ public class ReimbursementDao implements DaoContract<Reimbursement, Integer> {
 	 */
 
 	@Override
-	public Reimbursement findByName(String name) {
+	public Reimbursement findByName(String name, String password) {
 		return null;
 	}
 

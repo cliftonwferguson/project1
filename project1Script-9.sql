@@ -83,9 +83,11 @@ CREATE TABLE project1.ers_user_roles (
 	user_role text DEFAULT 'employee'
 );
 
-select * from project1.ers_users;
+
 
 drop table project1.ers_users cascade;
+
+select * from project1.ers_users where ers_username= 'John.smith' and ers_password= 'asd';
 
 create table project1.ers_users (
   ers_users_id serial primary key,
@@ -102,4 +104,5 @@ create table project1.ers_users (
  insert into project1.ers_users (ers_users_id, ers_username, ers_password, user_first_name, user_last_name, user_email, user_role_id) values
      (1, 'adam.adams', 'qwe', 'adam', 'adam', 'adam.adams@email.com', 2),
      (2, 'John.smith', 'asd', 'john', 'smith', 'john.smith@email.com', 1);
+    
 

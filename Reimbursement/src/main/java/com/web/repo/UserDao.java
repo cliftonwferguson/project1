@@ -46,13 +46,14 @@ public class UserDao implements DaoContract<User, Integer> {
 	}
 
 	
-	public User findByName(String name) {
+	public User findByName(String name, String password) {
 		User u = new User();
-		// "select account_id, amount, activity_type  from public.activity where id = ?";
-		String sql = "select * from project1.ers_users where ers_username=?";
+	
+		String sql = "select * from project1.ers_users where ers_username=? and ers_password=?";
 		try (Connection conn = ConnectionUtil.getInstance().getConnection()) {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, name);
+			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
 			rs.next();
 		
@@ -73,7 +74,7 @@ public class UserDao implements DaoContract<User, Integer> {
 
 	public static void main(String[] args) {
 		UserDao ud = new UserDao();
-		System.out.println(ud.findByName("John.smith"));
+		System.out.println(ud.findByName("John.smith", "asd"));
 		
 	}
 
