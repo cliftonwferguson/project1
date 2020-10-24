@@ -23,7 +23,7 @@ public class UserController {
 	public String login(HttpServletRequest req) {
 		String userName = req.getParameter("name");
 		User u = us.findByName(userName);
-		if(Optional.of(u).isPresent()) {
+		if(u != null) {
 			return "html/user.html";
 		} else {
 			return "html/landing.html";

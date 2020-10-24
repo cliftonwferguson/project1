@@ -2,6 +2,7 @@ package com.web.service;
 
 import com.web.model.User;
 import com.web.repo.DaoContract;
+import com.web.repo.UserDao;
 
 public class UserService {
 
@@ -13,7 +14,7 @@ public class UserService {
 	 }
 	 
 	 public UserService() {
-		 super();
+		 this(new UserDao());
 	 }
 	 
 	 public User findByName(String name) {
