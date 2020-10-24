@@ -55,16 +55,7 @@ public class UserDao implements DaoContract<User, Integer> {
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
 			rs.next();
-			
-//			 ers_users_id serial primary key,
-//			  ers_username text,
-//			  unique(ers_username),
-//			  ers_password text,
-//			  user_first_name text,
-//			  user_last_name text,
-//			  user_email text,
-//			  unique(user_email),
-//			  user_role_id intege
+		
 			
 			u = new User(rs.getInt("ers_users_id"),  
 					rs.getString("ers_username"),

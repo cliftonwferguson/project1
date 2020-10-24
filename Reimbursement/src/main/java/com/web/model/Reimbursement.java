@@ -27,7 +27,7 @@ public class Reimbursement {
 	private LocalDateTime submitted;
 	private LocalDateTime resolved;
 	private String description;
-	private BYTE_ARRAY receipt; 
+	private byte[] receipt; 
 	
 	//Use to retrieve data
 	private String author;
@@ -103,13 +103,13 @@ public int getId() {
 
 
 
-	public BYTE_ARRAY getReceipt() {
+	public byte[] getReceipt() {
 		return receipt;
 	}
 
 
 
-	public void setReceipt(BYTE_ARRAY receipt) {
+	public void setReceipt(byte[] receipt) {
 		this.receipt = receipt;
 	}
 
@@ -222,7 +222,7 @@ public int getId() {
 
 
 	public Reimbursement(int id, double amount, LocalDateTime submitted, LocalDateTime resolved, String description,
-			BYTE_ARRAY receipt, String author, String resolver, String status, String type, int author_id,
+			byte[] receipt, String author, String resolver, String status, String type, int author_id,
 			int resolver_id, int status_id, int type_id) {
 		super();
 		this.id = id;
@@ -258,6 +258,28 @@ public int getId() {
 		this.author = string;
 		this.amount = int2;
 		this.submitted = submitted;
+		
+	}
+
+
+
+
+
+
+
+	public Reimbursement(int int1, double double1, LocalDateTime object, LocalDateTime object2, String string,
+			byte[] bytes, int int2, int int3, int int4, int int5) {
+		this.id = int1;
+		this.amount = double1;
+		this.submitted = object;
+		this.resolved = object2;
+		this.description = string;
+		this.receipt = bytes;
+		this.author_id = int2;
+		this.resolver_id = int3;
+		this.status_id = int4;
+		this.type_id = int5;
+		
 		
 	}
 
