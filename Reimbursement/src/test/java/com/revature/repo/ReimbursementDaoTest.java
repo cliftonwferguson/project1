@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.web.model.Reimbursement;
+import com.web.model.User;
 import com.web.repo.ReimbursementDao;
 
 public class ReimbursementDaoTest {
@@ -26,11 +27,6 @@ public class ReimbursementDaoTest {
 		assertFalse(reimbursement.size() == 0);
 	}
 	
-	@Test
-	public void findByNameTest() {
-		Reimbursement r = rd.findByName("adam.adams");
-		assertNotNull(r);
-		
-	}
+	
 
 }

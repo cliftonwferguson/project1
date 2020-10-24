@@ -2,6 +2,7 @@ package com.web.service;
 
 import com.web.model.Reimbursement;
 import com.web.repo.DaoContract;
+import com.web.repo.ReimbursementDao;
 
 public class ReimbursementService {
    
@@ -13,12 +14,9 @@ public class ReimbursementService {
 	}
 	
 	public ReimbursementService() {
-		super();
+		this(new ReimbursementDao());
 	}
 	
-	public Reimbursement findByName(String name) {
-		return rdao.findByName(name);
-	}
 	
 	
 }

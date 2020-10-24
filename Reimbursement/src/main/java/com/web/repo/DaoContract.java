@@ -15,5 +15,7 @@ public interface DaoContract<T, I> {
 	int delete(T i);
 	
 	T findByName(String name);
+	
+	//T findByName(String name, String password);
 
 }

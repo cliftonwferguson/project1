@@ -16,17 +16,17 @@ public ReimbursementController(ReimbursementService rs) {
 }
   
   public ReimbursementController() {
-	  super();
+	  this(new ReimbursementService());
   }
   
-  public String login(HttpServletRequest req) {
-	  String userName =req.getParameter("name");
-	  Reimbursement r = rs.findByName(userName);
-	  if(Optional.of(r).isPresent()) {
-		  return "html/reimbursement.html";
-	  } else {
-		  return "html/landing.html";
-	  }
-  }
+//  public String login(HttpServletRequest req) {
+//	  String userName =req.getParameter("name");
+//	  Reimbursement r = rs.findByName(userName);
+//	  if(Optional.of(r).isPresent()) {
+//		  return "html/reimbursement.html";
+//	  } else {
+//		  return "html/landing.html";
+//	  }
+//  }
   
 }

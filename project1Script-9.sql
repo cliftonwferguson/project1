@@ -9,13 +9,19 @@ from ers_users a join ers_user_roles b on a.user_role_id = b.ers_user_role_id;
 
 drop view reimbursement_view;
 
-create view reimbursement_view as select a.reimb_id, a.reimb_author, a.reimb_amount, 
+create view reimbursement_view as select a.reimb_id, d.ers_username, a.reimb_author, a.reimb_amount, 
     b.reimb_status, a.reimb_submitted, c.reimb_type 
     from ers_reimbursement a join ers_reimbursement_status b on a.reimb_id  =  b.reimb_status_id
-   join ers_reimbursement_type c on a.reimb_id = c.reimb_type_id;
+   join ers_reimbursement_type c on a.reimb_id = c.reimb_type_id
+    left join ers_users d on a.reimb_author = d.ers_users_id;
   
 select * from reimbursement_view;
- 
+
+  insert into reimbursement_view (ers_username, reimb_amount, 
+    reimb_status, reimb_type) 
+     values 
+    ('John.smith', 600, 'Approved', 'Travel');
+    
  select * from reimbursement_view where reimb_author=?;
 
 create table project1.ers_users
@@ -41,7 +47,7 @@ CREATE TABLE project1.ers_reimbursement (
 );
 
    insert into project1.ers_reimbursement (reimb_amount, reimb_description, reimb_receipt, reimb_author, reimb_resolver, reimb_status_id, reimb_type_id) values
-     (100, 'travel', ('/home/xyz')::bytea, 2, 1, 1, 3);
+     (700, 'travel', ('/home/xyz')::bytea, 2, 1, 1, 3);
 
 select * from project1.ers_reimbursement_status;
 
