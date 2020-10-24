@@ -22,7 +22,8 @@ public class UserController {
 	
 	public String login(HttpServletRequest req) {
 		String userName = req.getParameter("name");
-		User u = us.findByName(userName);
+		String userPassword = req.getParameter("password");
+		User u = us.findByName(userName, userPassword);
 		if(u != null) {
 			return "html/user.html";
 		} else {

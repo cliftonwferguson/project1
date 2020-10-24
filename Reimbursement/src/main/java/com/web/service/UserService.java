@@ -17,7 +17,7 @@ public class UserService {
 		 this(new UserDao());
 	 }
 	 
-	 public User findByName(String name) {
-		 return udao.findByName(name);
+	 public User findByName(String name, String password) {
+		 return udao.findByName(name, password);
 	 }
 }
