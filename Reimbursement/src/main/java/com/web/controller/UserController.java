@@ -25,7 +25,7 @@ public class UserController {
 		String userPassword = req.getParameter("password");
 		User u = us.findByName(userName, userPassword);
 		if(u != null) {
-			return "html/user.html";
+			return "html/reimbursements.html";
 		} else {
 			return "html/landing.html";
 		}
