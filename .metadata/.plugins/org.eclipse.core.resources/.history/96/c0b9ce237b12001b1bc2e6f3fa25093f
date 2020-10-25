@@ -1,0 +1,28 @@
+package com.revature.config;
+
+
+import java.sql.Connection;
+
+
+public class ConnectionUtil {
+
+	private final String url = "jdbc:postgresql://bankclifton.cr3mdvbkdi0b.us-east-2.rds.amazonaws.com"
+			+ ":5432/postgres?currentSchema=project1";
+	private final String username = "jdbc_worker";
+	private final String password = "wasspord";
+
+	private static ConcnectionUtil instance;
+
+	private ConcnectionUtil() {
+		
+		public static ConcnectionUtil getInstance() {
+			if (instance == null) 
+				instance = new ConcnectionUtil();
+			}
+			return instance;
+		}
+		public Connection getConnection() throws SQLException {
+			return DriverManager.getConnection(url, user, password);
+		}
+	}
+}
